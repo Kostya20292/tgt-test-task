@@ -1,8 +1,8 @@
-import { defineConfig, devices } from '@playwright/test'
+import { defineConfig, devices } from '@playwright/test';
 
-const WEB_PORT = 5180
-const API_PORT = 3001
-const externalBaseUrl = process.env.E2E_BASE_URL
+const WEB_PORT = 5180;
+const API_PORT = 3001;
+const externalBaseUrl = process.env.E2E_BASE_URL;
 
 const localWebServers = [
   {
@@ -15,7 +15,7 @@ const localWebServers = [
     url: `http://localhost:${WEB_PORT}`,
     reuseExistingServer: true,
   },
-]
+];
 
 export default defineConfig({
   testDir: './tests/e2e',
@@ -29,7 +29,10 @@ export default defineConfig({
   },
   projects: [
     { name: 'desktop', use: { ...devices['Desktop Chrome'] } },
-    { name: 'mobile', use: { ...devices['Desktop Chrome'], viewport: { width: 360, height: 740 }, hasTouch: true } },
+    {
+      name: 'mobile',
+      use: { ...devices['Desktop Chrome'], viewport: { width: 360, height: 740 }, hasTouch: true },
+    },
   ],
   webServer: externalBaseUrl ? undefined : localWebServers,
-})
+});
