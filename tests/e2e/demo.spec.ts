@@ -1,11 +1,10 @@
 import { expect, test, type Page } from '@playwright/test'
 
-const API_URL = 'http://localhost:3001/api'
 const NEW_HIRE_NAME = 'Мария Попова'
 const PRIVATE_COMMENT = 'Хочу обсудить график, с директором говорить неудобно'
 
 test.beforeEach(async ({ request }) => {
-  const response = await request.post(`${API_URL}/demo/reset`)
+  const response = await request.post('/api/demo/reset')
   expect(response.ok()).toBe(true)
 })
 

@@ -2,6 +2,8 @@
 
 Помогает удержать новичков в первые 90 дней. Новичок раз в неделю отвечает на 4 вопроса по личной ссылке без логина. Руководитель и HR видят, кому плохо и почему, и что сделать прямо сейчас. Приём и увольнение подхватываются из задач Битрикс24 (в демо имитированы).
 
+**Демо: [tgt-test-task.vercel.app](https://tgt-test-task.vercel.app)**
+
 - Спецификация: [docs/SPEC.md](docs/SPEC.md)
 - План реализации: [docs/PLAN.md](docs/PLAN.md)
 - Отчёт: [docs/REPORT.md](docs/REPORT.md)
@@ -34,6 +36,7 @@ pnpm dev                      # web: http://localhost:5173, api: http://localhos
 pnpm typecheck && pnpm lint
 pnpm test                     # Vitest: правила риска, этапы, встречи (41 тест)
 pnpm test:e2e                 # Playwright: демо-сценарий на десктопе и 360×740
+E2E_BASE_URL=https://tgt-test-task.vercel.app pnpm test:e2e   # тот же прогон на проде
 ```
 
 ## Деплой (Vercel + Neon)
