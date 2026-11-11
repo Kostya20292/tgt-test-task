@@ -1,0 +1,56 @@
+@use '@/styles/mixins' as *;
+
+.list {
+  @include reset-list;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    'label value'
+    'track track';
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+
+  @include from($bp-sm) {
+    grid-template-columns: minmax(8rem, 14rem) minmax(0, 1fr) 6.5rem;
+    grid-template-areas: 'label track value';
+  }
+}
+
+.label {
+  grid-area: label;
+  font-size: 0.925rem;
+}
+
+.track {
+  grid-area: track;
+  block-size: 0.75rem;
+  border-radius: 999px;
+  background: var(--color-surface-muted);
+  overflow: hidden;
+}
+
+.fill {
+  display: block;
+  block-size: 100%;
+  border-radius: 999px;
+  background: var(--color-primary);
+}
+
+.highlighted {
+  background: var(--color-accent);
+}
+
+.value {
+  grid-area: value;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+  white-space: nowrap;
+}

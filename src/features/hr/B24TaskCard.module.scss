@@ -1,0 +1,57 @@
+@use '@/styles/mixins' as *;
+
+.card {
+  @include surface;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow-card);
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.meta {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.title {
+  font-size: 1.05rem;
+}
+
+.details {
+  display: grid;
+  gap: 0.5rem 1.25rem;
+
+  @include from($bp-sm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+
+  dt {
+    font-size: 0.775rem;
+    color: var(--color-text-muted);
+  }
+
+  dd {
+    font-size: 0.925rem;
+  }
+}

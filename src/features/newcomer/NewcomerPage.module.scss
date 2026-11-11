@@ -1,0 +1,52 @@
+@use '@/styles/mixins' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.hero {
+  @include surface;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: linear-gradient(160deg, var(--color-primary-soft), var(--color-surface) 75%);
+  box-shadow: var(--shadow-card);
+}
+
+.role {
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.greeting {
+  max-inline-size: 60ch;
+}
+
+.columns {
+  display: grid;
+  gap: 1.25rem;
+  align-items: start;
+
+  @include from($bp-md) {
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  }
+}
+
+.mainColumn,
+.sideColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-inline-size: 0;
+}
+
+.meetingTitle {
+  font-weight: 600;
+}
+
+.meetingDate {
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,23 @@
+.dot {
+  inline-size: 0.5rem;
+  block-size: 0.5rem;
+  border-radius: 50%;
+  background: currentcolor;
+}
+
+.low {
+  border-radius: 50%;
+}
+
+.medium {
+  border-radius: 2px;
+  rotate: 45deg;
+}
+
+.high {
+  border-radius: 1px;
+}
+
+.score {
+  font-weight: 500;
+}

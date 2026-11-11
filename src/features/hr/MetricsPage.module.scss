@@ -1,0 +1,52 @@
+@use '@/styles/mixins' as *;
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  align-items: start;
+
+  @include from($bp-md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  > :last-child {
+    @include from($bp-md) {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.insight {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.insightNumbers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.75rem;
+  font-size: 2rem;
+  font-weight: 750;
+  line-height: 1.1;
+}
+
+.insightGood {
+  color: var(--color-success-text);
+}
+
+.insightBad {
+  color: var(--color-danger-text);
+}
+
+.insightVersus {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.insightNote {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}

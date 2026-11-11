@@ -1,0 +1,36 @@
+.footer {
+  border-block-start: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  max-inline-size: var(--content-width);
+  margin-inline: auto;
+  padding: 1rem var(--page-padding);
+}
+
+.note {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.status {
+  font-size: 0.875rem;
+  color: var(--color-success-text);
+
+  &:empty {
+    display: none;
+  }
+}

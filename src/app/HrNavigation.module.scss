@@ -1,0 +1,54 @@
+@use '@/styles/mixins' as *;
+
+.nav {
+  display: flex;
+  gap: 0.25rem;
+  margin-inline: calc(var(--page-padding) * -1);
+  padding-inline: var(--page-padding);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.85rem 0.5rem;
+
+  @include from($bp-sm) {
+    padding-inline: 0.75rem;
+  }
+
+  border-block-end: 3px solid transparent;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  font-size: 0.925rem;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    color: var(--color-text);
+  }
+}
+
+.active {
+  border-block-end-color: var(--color-primary);
+  color: var(--color-primary);
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.counter {
+  display: inline-grid;
+  place-items: center;
+  min-inline-size: 1.4rem;
+  padding-inline: 0.35rem;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.4rem;
+}

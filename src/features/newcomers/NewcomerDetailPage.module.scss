@@ -1,0 +1,54 @@
+@use 'sass:list';
+@use '@/styles/mixins' as *;
+
+.back {
+  inline-size: fit-content;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  @include from($bp-md) {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.column {
+  display: contents;
+
+  @include from($bp-md) {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    min-inline-size: 0;
+  }
+}
+
+$mobile-order: (risk, contact, mentor, checkpoints, checkins, checklist);
+
+@each $area in $mobile-order {
+  .#{$area} {
+    order: list.index($mobile-order, $area);
+
+    @include from($bp-md) {
+      order: 0;
+    }
+  }
+}

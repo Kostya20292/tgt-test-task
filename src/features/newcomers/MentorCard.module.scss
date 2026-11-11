@@ -1,0 +1,33 @@
+.current {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.name {
+  font-weight: 650;
+}
+
+.position {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.missing {
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-m);
+  background: var(--color-warning-bg);
+  color: var(--color-warning-text);
+  font-size: 0.9rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.error {
+  color: var(--color-danger-text);
+  font-weight: 600;
+}

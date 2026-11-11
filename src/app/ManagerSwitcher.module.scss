@@ -1,0 +1,22 @@
+.switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  inline-size: 100%;
+  padding-block: 0.5rem;
+
+  > :last-child {
+    flex: 1;
+    max-inline-size: 32rem;
+  }
+}
+
+.caption {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+
+  @media (width < 420px) {
+    display: none;
+  }
+}

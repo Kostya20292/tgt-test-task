@@ -1,0 +1,44 @@
+@use '@/styles/mixins' as *;
+
+.list {
+  @include reset-list;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding-block-end: 0.75rem;
+  border-block-end: 1px solid var(--color-border);
+
+  &:last-child {
+    padding-block-end: 0;
+    border-block-end: 0;
+  }
+}
+
+.role {
+  font-size: 0.775rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.name {
+  font-weight: 650;
+}
+
+.position,
+.empty {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.phone {
+  inline-size: fit-content;
+  font-weight: 600;
+}

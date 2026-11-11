@@ -1,0 +1,145 @@
+@use './mixins' as *;
+
+:root {
+  color-scheme: light;
+
+  --color-bg: #f4f6fa;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f1f4f9;
+  --color-border: #dce2eb;
+  --color-border-strong: #b8c2d1;
+  --color-text: #141c2e;
+  --color-text-muted: #556073;
+  --color-primary: #1d4ed8;
+  --color-primary-hover: #1a40b0;
+  --color-primary-soft: #e7eefd;
+  --color-accent: #e8590c;
+  --color-focus: #1d4ed8;
+
+  --color-danger-bg: #fde8e7;
+  --color-danger-text: #a8200d;
+  --color-danger-border: #f5b3ab;
+  --color-warning-bg: #fdf1d3;
+  --color-warning-text: #8a3b0a;
+  --color-warning-border: #f2cf86;
+  --color-warning-strong: #d97706;
+  --color-success-bg: #dff7e8;
+  --color-success-text: #0b6b3a;
+  --color-success-border: #9ddcb7;
+  --color-info-bg: #e7eefd;
+  --color-info-text: #1a40b0;
+  --color-info-border: #b5c8f6;
+
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 16px;
+  --shadow-card: 0 1px 2px rgb(16 24 40 / 5%), 0 2px 6px rgb(16 24 40 / 6%);
+  --shadow-dialog: 0 20px 48px rgb(16 24 40 / 22%);
+
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --content-width: 1200px;
+  --page-padding: clamp(1rem, 3vw, 2rem);
+
+  font-family: var(--font-sans);
+  font-size: 100%;
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-bg);
+  accent-color: var(--color-primary);
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-block-size: 100dvh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2rem);
+  font-weight: 750;
+}
+
+h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--color-primary);
+  text-underline-offset: 0.18em;
+
+  &:hover {
+    color: var(--color-primary-hover);
+  }
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  @include focus-ring;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (forced-colors: active) {
+  :focus-visible {
+    outline-color: Highlight;
+  }
+}

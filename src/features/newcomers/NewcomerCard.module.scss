@@ -1,0 +1,88 @@
+@use '@/styles/mixins' as *;
+
+.card {
+  @include surface;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-inline-start-width: 4px;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.15s ease;
+
+  &:hover {
+    border-color: var(--color-border-strong);
+  }
+
+  &:has(.link:focus-visible) {
+    @include focus-ring;
+  }
+}
+
+.high {
+  border-inline-start-color: var(--color-danger-text);
+}
+
+.medium {
+  border-inline-start-color: var(--color-warning-strong);
+}
+
+.low {
+  border-inline-start-color: var(--color-success-border);
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-inline-size: 0;
+}
+
+.name {
+  font-size: 1.05rem;
+}
+
+.link {
+  color: var(--color-text);
+  text-decoration: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+  }
+
+  &:hover {
+    color: var(--color-primary);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.meta {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.meeting {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block-start: 0.6rem;
+  border-block-start: 1px solid var(--color-border);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,79 @@
+@use '@/styles/mixins' as *;
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+  }
+}
+
+.list {
+  @include reset-list;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-m);
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--color-border-strong);
+  }
+
+  &:has(:disabled) {
+    cursor: progress;
+  }
+}
+
+.done {
+  background: var(--color-surface-muted);
+
+  .itemTitle {
+    color: var(--color-text-muted);
+    text-decoration: line-through;
+  }
+}
+
+.checkbox {
+  flex-shrink: 0;
+  inline-size: 1.2rem;
+  block-size: 1.2rem;
+  margin: 0.1rem 0 0;
+}
+
+.itemText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.itemTitle {
+  font-weight: 500;
+}
+
+.itemMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.825rem;
+  color: var(--color-text-muted);
+}
+
+.error {
+  color: var(--color-danger-text);
+  font-weight: 600;
+}
