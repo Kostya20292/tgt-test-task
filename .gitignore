@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 .env
+.env*
+!.env.example
 .vercel
 test-results
 playwright-report
@@ -26,3 +28,4 @@ playwright-report
 *.njsproj
 *.sln
 *.sw?
+.neon
