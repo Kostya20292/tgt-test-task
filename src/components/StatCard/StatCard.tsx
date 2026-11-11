@@ -1,12 +1,5 @@
-import type { ReactNode } from 'react'
-import styles from './StatCard.module.scss'
-
-type StatCardProps = {
-  label: string
-  value: ReactNode
-  hint?: ReactNode
-  tone?: 'default' | 'danger' | 'warning' | 'accent'
-}
+import type { StatCardProps, StatGridProps } from './StatCard.types.ts';
+import styles from './StatCard.module.scss';
 
 export const StatCard = ({ label, value, hint, tone = 'default' }: StatCardProps) => (
   <div className={`${styles.card} ${styles[tone]}`}>
@@ -14,10 +7,8 @@ export const StatCard = ({ label, value, hint, tone = 'default' }: StatCardProps
     <dd className={styles.value}>{value}</dd>
     {hint && <dd className={styles.hint}>{hint}</dd>}
   </div>
-)
+);
 
-type StatGridProps = {
-  children: ReactNode
-}
-
-export const StatGrid = ({ children }: StatGridProps) => <dl className={styles.grid}>{children}</dl>
+export const StatGrid = ({ children }: StatGridProps) => (
+  <dl className={styles.grid}>{children}</dl>
+);

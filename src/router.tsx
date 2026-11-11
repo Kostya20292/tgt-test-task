@@ -1,15 +1,15 @@
-import { createBrowserRouter } from 'react-router'
-import { AppLayout } from '@/app/AppLayout.tsx'
-import { NewcomerLayout } from '@/app/NewcomerLayout.tsx'
-import { HomePage } from '@/features/home/HomePage.tsx'
-import { B24Page } from '@/features/hr/B24Page.tsx'
-import { MetricsPage } from '@/features/hr/MetricsPage.tsx'
-import { RadarPage } from '@/features/hr/RadarPage.tsx'
-import { ManagerPage } from '@/features/manager/ManagerPage.tsx'
-import { NewcomerPage } from '@/features/newcomer/NewcomerPage.tsx'
-import { NewcomerDetailPage } from '@/features/newcomers/NewcomerDetailPage.tsx'
-import { NotFoundPage } from '@/features/system/NotFoundPage.tsx'
-import { RouteErrorPage } from '@/features/system/RouteErrorPage.tsx'
+import { createBrowserRouter } from 'react-router';
+import { AppLayout } from '@/app/AppLayout.tsx';
+import { NewcomerLayout } from '@/app/NewcomerLayout.tsx';
+import { HomePage } from '@/pages/home/HomePage/HomePage.tsx';
+import { B24Page } from '@/pages/hr/B24Page/B24Page.tsx';
+import { MetricsPage } from '@/pages/hr/MetricsPage/MetricsPage.tsx';
+import { RadarPage } from '@/pages/hr/RadarPage/RadarPage.tsx';
+import { ManagerPage } from '@/pages/manager/ManagerPage/ManagerPage.tsx';
+import { NewcomerPage } from '@/pages/newcomer/NewcomerPage/NewcomerPage.tsx';
+import { NewcomerDetailPage } from '@/pages/newcomers/NewcomerDetailPage/NewcomerDetailPage.tsx';
+import { NotFoundPage } from '@/pages/system/NotFoundPage/NotFoundPage.tsx';
+import { RouteErrorPage } from '@/pages/system/RouteErrorPage/RouteErrorPage.tsx';
 
 export const router = createBrowserRouter([
   {
@@ -42,4 +42,4 @@ export const router = createBrowserRouter([
     errorElement: <RouteErrorPage />,
     children: [{ index: true, element: <NewcomerPage /> }],
   },
-])
+]);

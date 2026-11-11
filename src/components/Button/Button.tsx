@@ -1,12 +1,6 @@
-import type { ButtonHTMLAttributes } from 'react'
-import { getButtonClassName, type ButtonSize, type ButtonVariant } from './buttonClassName.ts'
-import styles from './Button.module.scss'
-
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: ButtonVariant
-  size?: ButtonSize
-  isLoading?: boolean
-}
+import { getButtonClassName } from './buttonClassName.ts';
+import type { ButtonProps } from './Button.types.ts';
+import styles from './Button.module.scss';
 
 export const Button = ({
   variant = 'primary',
@@ -28,4 +22,4 @@ export const Button = ({
     {isLoading && <span className={styles.spinner} aria-hidden="true" />}
     {children}
   </button>
-)
+);

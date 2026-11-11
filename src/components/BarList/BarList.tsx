@@ -1,20 +1,8 @@
-import styles from './BarList.module.scss'
-
-export type BarListItem = {
-  id: string
-  label: string
-  value: number
-  valueLabel: string
-  isHighlighted?: boolean
-}
-
-type BarListProps = {
-  items: BarListItem[]
-  ariaLabel: string
-}
+import type { BarListProps } from './BarList.types.ts';
+import styles from './BarList.module.scss';
 
 export const BarList = ({ items, ariaLabel }: BarListProps) => {
-  const maxValue = Math.max(...items.map((item) => item.value), 0)
+  const maxValue = Math.max(...items.map((item) => item.value), 0);
 
   return (
     <ul className={styles.list} aria-label={ariaLabel}>
@@ -31,5 +19,5 @@ export const BarList = ({ items, ariaLabel }: BarListProps) => {
         </li>
       ))}
     </ul>
-  )
-}
+  );
+};

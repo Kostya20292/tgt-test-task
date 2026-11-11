@@ -1,17 +1,16 @@
-import { useId, type ReactNode } from 'react'
-import styles from './Card.module.scss'
+import { useId } from 'react';
+import type { CardProps } from './Card.types.ts';
+import styles from './Card.module.scss';
 
-type CardProps = {
-  title?: string
-  description?: ReactNode
-  actions?: ReactNode
-  tone?: 'default' | 'highlight'
-  className?: string
-  children: ReactNode
-}
-
-export const Card = ({ title, description, actions, tone = 'default', className, children }: CardProps) => {
-  const titleId = useId()
+export const Card = ({
+  title,
+  description,
+  actions,
+  tone = 'default',
+  className,
+  children,
+}: CardProps) => {
+  const titleId = useId();
 
   return (
     <section
@@ -29,5 +28,5 @@ export const Card = ({ title, description, actions, tone = 'default', className,
       )}
       {children}
     </section>
-  )
-}
+  );
+};

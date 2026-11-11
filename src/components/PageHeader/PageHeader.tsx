@@ -1,12 +1,5 @@
-import type { ReactNode } from 'react'
-import styles from './PageHeader.module.scss'
-
-type PageHeaderProps = {
-  title: string
-  description?: ReactNode
-  actions?: ReactNode
-  before?: ReactNode
-}
+import type { PageHeaderProps } from './PageHeader.types.ts';
+import styles from './PageHeader.module.scss';
 
 export const PageHeader = ({ title, description, actions, before }: PageHeaderProps) => (
   <header className={styles.header}>
@@ -19,4 +12,4 @@ export const PageHeader = ({ title, description, actions, before }: PageHeaderPr
       {actions && <div className={styles.actions}>{actions}</div>}
     </div>
   </header>
-)
+);

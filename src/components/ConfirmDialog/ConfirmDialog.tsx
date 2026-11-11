@@ -1,20 +1,9 @@
-import { useId, useRef, type SyntheticEvent } from 'react'
-import { Button } from '../Button/Button.tsx'
-import type { ButtonSize, ButtonVariant } from '../Button/buttonClassName.ts'
-import styles from './ConfirmDialog.module.scss'
+import { useId, useRef, type SyntheticEvent } from 'react';
+import { Button } from '../Button/Button.tsx';
+import type { ConfirmDialogProps } from './ConfirmDialog.types.ts';
+import styles from './ConfirmDialog.module.scss';
 
-const CONFIRM_VALUE = 'confirm'
-
-type ConfirmDialogProps = {
-  triggerLabel: string
-  title: string
-  description: string
-  confirmLabel: string
-  onConfirm: () => void
-  isPending?: boolean
-  triggerVariant?: ButtonVariant
-  triggerSize?: ButtonSize
-}
+const CONFIRM_VALUE = 'confirm';
 
 export const ConfirmDialog = ({
   triggerLabel,
@@ -26,24 +15,29 @@ export const ConfirmDialog = ({
   triggerVariant = 'secondary',
   triggerSize = 's',
 }: ConfirmDialogProps) => {
-  const dialogRef = useRef<HTMLDialogElement>(null)
-  const titleId = useId()
-  const descriptionId = useId()
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const titleId = useId();
+  const descriptionId = useId();
 
   const handleOpen = () => {
-    dialogRef.current?.showModal()
-  }
+    dialogRef.current?.showModal();
+  };
 
   const handleClose = (event: SyntheticEvent<HTMLDialogElement>) => {
-    const dialog = event.currentTarget
-    const shouldConfirm = dialog.returnValue === CONFIRM_VALUE
-    dialog.returnValue = ''
-    if (shouldConfirm) onConfirm()
-  }
+    const dialog = event.currentTarget;
+    const shouldConfirm = dialog.returnValue === CONFIRM_VALUE;
+    dialog.returnValue = '';
+    if (shouldConfirm) onConfirm();
+  };
 
   return (
     <>
-      <Button variant={triggerVariant} size={triggerSize} onClick={handleOpen} isLoading={isPending}>
+      <Button
+        variant={triggerVariant}
+        size={triggerSize}
+        onClick={handleOpen}
+        isLoading={isPending}
+      >
         {triggerLabel}
       </Button>
       <dialog
@@ -67,5 +61,5 @@ export const ConfirmDialog = ({
         </form>
       </dialog>
     </>
-  )
-}
+  );
+};

@@ -1,16 +1,10 @@
-import { useId } from 'react'
-import styles from './ProgressBar.module.scss'
-
-type ProgressBarProps = {
-  label: string
-  value: number
-  max: number
-  valueText?: string
-}
+import { useId } from 'react';
+import type { ProgressBarProps } from './ProgressBar.types.ts';
+import styles from './ProgressBar.module.scss';
 
 export const ProgressBar = ({ label, value, max, valueText }: ProgressBarProps) => {
-  const labelId = useId()
-  const clampedValue = Math.min(Math.max(value, 0), max)
+  const labelId = useId();
+  const clampedValue = Math.min(Math.max(value, 0), max);
 
   return (
     <div className={styles.progress}>
@@ -22,5 +16,5 @@ export const ProgressBar = ({ label, value, max, valueText }: ProgressBarProps) 
         {valueText}
       </progress>
     </div>
-  )
-}
+  );
+};

@@ -43,7 +43,7 @@ Neon Postgres
   api/                        fetch-клиент и хуки TanStack Query
   app/                        layout, навигация, выбор руководителя, сброс демо
   components/                 UI-примитивы (Button, Badge, Card, RiskBadge, ConfirmDialog, StatCard, BarList…)
-  features/
+  pages/
     home/                     главная с демо-сценарием
     newcomer/                 страница новичка, чек-ин
     newcomers/                карточка новичка (общая для HR и руководителя)
